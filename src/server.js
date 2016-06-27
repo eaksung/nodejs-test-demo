@@ -1,13 +1,13 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var Point = require('./modules/point');
+const express = require('express');
+const bodyParser = require('body-parser');
+const Point = require('./modules/point');
 
-var app = express();
+const app = express();
 app.use(bodyParser.json());
 
 app.post('/distance', function(req, res, next) {
-    var body = req.body;
-    var valid = true;
+    const body = req.body;
+    let valid = true;
     if(typeof body.origin.lat == 'undefined') {
         valid = false;
     } else if(typeof body.origin.lng == 'undefined') {
@@ -18,9 +18,9 @@ app.post('/distance', function(req, res, next) {
         valid = false;
     }
     if(valid) {
-        var p1 = new Point(body.origin.lat, body.origin.lng);
-        var p2 = new Point(body.destination.lat, body.destination.lng);
-        var data = {
+        const p1 = new Point(body.origin);
+        const p2 = new Point(body.destination);
+        const data = {
             'code': 1,
             'distance': p1.getKMDistance(p2)
         };

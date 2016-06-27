@@ -5,7 +5,7 @@ var Point = require('../src/modules/point');
 
 describe('Point', function() {
     describe('Create point object', function() {
-        var p = new Point(13, 100);
+        var p = new Point({lat: 13, lng: 100});
         it('crate instance of Point should set lat and lng', function() {
             assert.equal(p.lat, 13, 'set lat correct');
             assert.equal(p.lng, 100, 'set lng correct');
@@ -18,8 +18,8 @@ describe('Point', function() {
     });
 
     describe('Calculate distance between two point', function() {
-        var p1 = new Point(13, 100);
-        var p2 = new Point(14, 101);
+        var p1 = new Point({lat: 13, lng: 100});
+        var p2 = new Point({lat: 14, lng: 101});
         it('getKMDistance() should return number of distance', function() {
             expect(p1.getKMDistance(p2)).to.be.not.null;
             expect(Math.round(p1.getKMDistance(p2))).to.equal(155);
