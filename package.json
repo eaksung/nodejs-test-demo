@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-test-demo",
+  "version": "1.0.0",
+  "description": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eaksung/nodejs-test-demo.git"
+  },
+  "keywords": [
+    "node.js",
+    "test"
+  ],
+  "author": "Kriangsak Vanitchakornpong",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/eaksung/nodejs-test-demo/issues"
+  },
+  "homepage": "https://github.com/eaksung/nodejs-test-demo#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "mocha": "^2.5.3",
+    "request": "^2.72.0"
+  }
+}
